@@ -1,0 +1,60 @@
+/*
+    iRow = 6
+    iCol = 6
+
+    #   $   $   $   $   $
+    *   #   $   $   $   $
+    *   *   #   $   $   $
+    *   *   *   #   $   $
+    *   *   *   *   #   $
+    *   *   *   *   *   #
+
+    #   $   $   $
+    *   #   $   $
+    *   *   #   $
+    *   *   *   #
+*/
+
+#include<stdio.h>
+
+void Display(int iRow,  int iCol)
+{
+    int i = 0, j =0;
+
+    //    1       2       3    
+    for(i = 1; i<=iRow; i++) // Outer
+    {
+        //    1       2       3 
+        for(j = 1; j<= iCol; j++) // Inner    
+        {
+            if(i == j)  //  Diagonal
+            {
+                printf("# \t");
+            }
+            else if(i>j)    // Lower Triangle
+            {
+                 printf("* \t");
+            }
+            else            // Upper Triangle
+            {
+                printf("$\t");
+            }
+        }
+        printf("\n\n");
+    }
+}   
+
+
+int main()
+{
+    int iNo1, iNo2 = 0;
+
+    printf("Enter The Number Of Rows :\n");
+    scanf("%d",&iNo1);
+
+    printf("Enter The Number Of Coloumn :\n");
+    scanf("%d",&iNo2);
+
+    Display(iNo1,iNo2);
+    return 0;
+}
